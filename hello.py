@@ -1,8 +1,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-
-print(__name__)
+# print(__name__)
 
 @app.route('/')
 def hello_world():
@@ -12,11 +11,12 @@ def hello_world():
 def bye():
     return 'Bye!'
 
-def greet(name):
-    ...
+@app.route('/username/<name>/<int:number>')  # <> becomes a variable
+def greet(name, number):
+    return f"Hello {name}! You are {number} years old!"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 # @app.route("/")
 # def hello_world():
