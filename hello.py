@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return ('<h1 style="text-align: center">Hello, World!</h1>'
+            '<p>This is a paragraph written in PyCharm.</p>'
+            '<p>Please enjoy this GIF of Jiji from Kiki&#39;s Delivery Service</p>'
+            '<img src="https://pa1.aminoapps.com/6241/7c70e19703679f9a46690c1349f5a1e2324a29ee_hq.gif" width=400>')
 
 @app.route('/bye')
 def bye():
@@ -17,7 +20,3 @@ def greet(name, number):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# @app.route("/")
-# def hello_world():
-#     return "<p>Hello, World!</p>"
